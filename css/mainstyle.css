@@ -47,3 +47,8 @@ body {
   position: relative;
   left: 50px;
 }
+
+#footer {
+  text-align: center;
+  font-size: 15px;
+}
