@@ -1,5 +1,4 @@
 
-
 #bluebox {
   height: 200px;
   width:  300px;
@@ -23,7 +22,7 @@
   height: 100px;
   width:  50px;
   background-color: red;
-  position: relative;
+  position: absolute;
   z-index: 2;
   margin:auto;
 }
