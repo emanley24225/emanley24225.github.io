@@ -16,7 +16,8 @@
   position: relative;
   z-index: 1;
   margin:auto;
-}
+  margin-left: 550px;
+    }
 
 #redbox {
   height: 100px;
@@ -31,7 +32,7 @@
   height: 100px;
   width:  25px;
   background-color: grey;
-  position: fixed;
+  position: relative;
   z-index: 4;
-  float: left;
-}
+  margin:auto;
+  }
