@@ -22,7 +22,7 @@
   height: 100px;
   width:  50px;
   background-color: red;
-  position: absolute;
+  position: relative;
   z-index: 2;
   margin:auto;
 }
