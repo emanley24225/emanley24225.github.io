@@ -48,7 +48,9 @@ body {
   left: 50px;
 }
 
-#footer {
-  text-align: center;
-  font-size: 15px;
+#copyright {
+ position: absolute;
+ width: 1000px;
+ text-align: center;
+ bottom: 20px;
 }

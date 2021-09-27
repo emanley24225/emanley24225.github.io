@@ -5,21 +5,21 @@
   <!-- All styling for this HTML document are contained in an external css
   file -->
   <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
-  <script>
-document.write("Where is my JS code?");
-</script>
 </head>
 <body>
   <div id ="body-container">
     <div id="header">
-  <h1> Hello, my name is Ethan Manley!</h1>
-</div>
+      <h1 id = "java"> Hello, Welcome to my webpage,
+        <script src="javascript/external.js"></script>
+      </h1>
+  </div>
 <div id="profile-picture">
-  <img src=Images/profile-picture.jpg width=200px height=250px />
+  <img src=Images/profile-picture.jpg width=350px height=400px />
 </div>
   <div id="welcome-text">
-      Welcome to my webpage.<br>
-    I am a student in the
+      My name is Ethan! <br>
+      Welcome to my webpage. <br>
+      I am a student in the
     <a href= https://www.clarku.edu/schools/idce/>IDCE Department</a> at
     <a href=https://www.clarku.edu/>Clark University</a>.
   </div>
@@ -31,14 +31,20 @@ document.write("Where is my JS code?");
       <li>Urban Greenscaping</li>
     </ol>
   </div>
- </div>
- <div id ="java">
- <script src="javascript/external.js"></script>
-</div>
+  <div id="copyright">
+   <script>
+   // The division tag created a new section within the webpage to place the
+   // copyright in. The script tag is used to embed code from the javascript
+   // language within the html.
+   var today = new Date();
+   // This line of code creates a new variable which stores information so it
+   // can be called and respresented which in this case is the date function.
+   // This shows the current day's date.
+   var year = today.getFullYear();
+   // This line stores the year based on what today's date is into a variable so
+   // that it can be called upon later.
+   document.writeln("Copyright &copy; " + year);
+   </script>
+  </div>
 </body>
-<div id="footer">
-<footer>
-  © 2021 by Ethan Manley
-</footer>
-</div>
 </html>
