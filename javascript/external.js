@@ -3,17 +3,17 @@ var webmaps =
   [
     "ArcGIS Online",
     "https://www.arcgis.com/",
-    "The primary purpose of ArcGIS online is to conduct geospatial analysis and publish maps that display important spatial information.",
+    "The primary purpose of ArcGIS online is to conduct geospatial analysis and publish maps that display important spatial information.ArcGIS has many of the same capabilities as the traditional software. The user can summarize their data, analyze patterns within their data, identify optimal routes, and understand the best locations or the locations most at risk. ",
   ],
   [
     "Mapbox",
     "https://studio.mapbox.com/",
-    "I believe the primary purpose of Mapbox is to visual spatial data and create maps.",
+    "I believe the primary purpose of Mapbox is to visual spatial data and create maps.Mapbox has certain GIS functionalities. Mapbox is great for data visualization. The user can enter shapefiles and .csv data into the platform so that it can be spatially displayed. Finally, Mapbox can be used for location services to update traffic and provide navigation. ",
   ],
   [
     "Github",
     "https://github.com/",
-    "Github is like a virtual storage facility where documents can be posted to a larger server where people can reach them.",
+    "Github is like a virtual storage facility where documents can be posted to a larger server where people can reach them.Additionally, when a document is sent to this larger server the changes committed by the person can be tracked so others can see how the document was altered. With Github, the user can push the changes to the larger cloudlike server where the updated document can be stored for others to view and work on for themselves",
   ]
 ];
 
@@ -34,14 +34,10 @@ function webmap_table()
 {
   document.write("<table width = 100%>");
   for (var row =0; row < webmaps.length; row++)
-  {
+  { if (webmaps == 1) {
+    document.table.style.backgroundColor = "red";
+  }
     document.write("<tr>");
-    if (row == 0) {
-       document.body.style.backgroundColor = "grey";
-     }
-       else {
-         document.body.style.backgroundColor = "white";
-       }
     for (var column=0; column < webmaps[0].length; column++)
     {
       document.write("<td>" + webmaps[row][column] + "</td>");
