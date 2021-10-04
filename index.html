@@ -6,18 +6,18 @@
   file -->
   <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
   <script src="javascript/external.js"></script>
-</head>
+    </head>
 <body>
   <div id ="body-container">
     <div id="header">
-      <h1 id = "java"> Hello, Welcome to my webpage,
+      <h1 id = "java">
         <script>
         document.write(welcome());
         </script>
       </h1>
   </div>
 <div id="profile-picture">
-  <img src=Images/profile-picture.jpg width=250px height=250px />
+  <img src=Images/profile-picture.jpg width=250px height=300px />
 </div>
   <div id="welcome-text">
       My name is Ethan! <br>
@@ -25,6 +25,23 @@
       I am a student in the
     <a href= https://www.clarku.edu/schools/idce/>IDCE Department</a> at
     <a href=https://www.clarku.edu/>Clark University</a>.
+  </div>
+  <div id= "area-calculator">
+      <form action="/index.html" method="POST">
+      <label for="length"> Length:
+      </label>
+      <input type="text" name="length" id="length"> <br>
+      <label for="width"> Width:
+      </label>
+      <input type="text" name="width" id="width"> <br>
+      <label for="area"> Area:
+      <input type="Text" name="area" id="area"> <br>
+      </form>
+    <script>
+    calc()
+    </script>
+    <input type="button" name="calculate" id="area" onclick="calc()"
+    value="calculate">
   </div>
   <div id="research-interests">
     <h3> Research Interests </h3>
@@ -40,6 +57,7 @@
     webmap_table()
     </script>
   </div>
+  <footer>
   <div id="copyright">
    <script>
    // The division tag created a new section within the webpage to place the
@@ -55,5 +73,6 @@
    document.writeln("Copyright &copy; " + year);
    </script>
   </div>
-</body>
+</footer>
+  </body>
 </html>

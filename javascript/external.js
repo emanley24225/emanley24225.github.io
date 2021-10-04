@@ -2,18 +2,18 @@ var webmaps =
 [
   [
     "ArcGIS Online",
-    "https://www.arcgis.com/index.html",
-    "The primary purpose of ArcGIS online is to conduct geospatial analysis and publish maps that display important spatial information. Additionally, it allows users to access cloud technology making it easy to share their products which is extremely beneficial.",
+    "https://www.arcgis.com/",
+    "The primary purpose of ArcGIS online is to conduct geospatial analysis and publish maps that display important spatial information.",
   ],
   [
     "Mapbox",
     "https://studio.mapbox.com/",
-    "I believe the primary purpose of Mapbox is to visual spatial data and create maps but I am not completely sure because there are functions like real time traffic and turn by turn navigation so it could also be utilized in more practical ways. In my opinion, Mapbox is not a very solidly defined platform and I could use a lot more information and a tutorial.",
+    "I believe the primary purpose of Mapbox is to visual spatial data and create maps.",
   ],
   [
     "Github",
     "https://github.com/",
-    "Github is like a virtual storage facility where documents can be posted to a larger server where people can reach them. Additionally, when a document is sent to this larger server the changes committed by the person can be tracked so others can see how the document was altered.",
+    "Github is like a virtual storage facility where documents can be posted to a larger server where people can reach them.",
   ]
 ];
 
@@ -36,6 +36,12 @@ function webmap_table()
   for (var row =0; row < webmaps.length; row++)
   {
     document.write("<tr>");
+    if (row == 0) {
+       document.body.style.backgroundColor = "grey";
+     }
+       else {
+         document.body.style.backgroundColor = "white";
+       }
     for (var column=0; column < webmaps[0].length; column++)
     {
       document.write("<td>" + webmaps[row][column] + "</td>");
@@ -45,6 +51,12 @@ function webmap_table()
   document.write("</table>")
 }
 
+function calc() {
+  var width =  document.getElementById("width").value;
+  var length = document.getElementById("length").value;
+  var area = width * length;
+  document.getElementById("area").value = area;
+}
 
 // window.alert(5 + 6);
 // const x = "web"
