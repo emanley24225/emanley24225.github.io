@@ -13,7 +13,7 @@ var webmaps =
   [
     "Github",
     "https://github.com/",
-    "Github is like a virtual storage facility where documents can be posted to a larger server where people can reach them.Additionally, when a document is sent to this larger server the changes committed by the person can be tracked so others can see how the document was altered. With Github, the user can push the changes to the larger cloudlike server where the updated document can be stored for others to view and work on for themselves",
+    "Github is like a virtual storage facility where documents can be posted to a larger server where people can reach them.Additionally, when a document is sent to this larger server the changes committed by the person can be tracked so others can see how the document was altered. With Github, the user can push the changes to the larger cloudlike server where the updated document can be stored for others to view and work on for themselves.",
   ]
 ];
 
