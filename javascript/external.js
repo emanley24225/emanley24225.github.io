@@ -34,13 +34,16 @@ function webmap_table()
 {
   document.write("<table width = 100%>");
   for (var row =0; row < webmaps.length; row++)
-  {   if (row.length ==2 ) {
-        row.style.backgroundColor = "grey";
-      }
-    document.write("<tr>");
+  {
+      document.write("<tr>");
     for (var column=0; column < webmaps[0].length; column++)
-    {
-      document.write("<td>" + webmaps[row][column] + "</td>");
+
+        if(row ==1) {
+          document.write("<td style='background-color:lightgrey;'>" +
+                                          webmaps[row][column] + "</td>");
+    }
+     else {
+          document.write("<td>"+ webmaps[row][column] + "</td>");
     }
     document.write("</tr>");
   }
