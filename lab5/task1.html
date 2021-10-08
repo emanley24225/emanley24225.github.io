@@ -10,15 +10,15 @@
     }
     </style>
     <script>
-        function initMap() {
+            function initMap() {
       const center = { lat: -25.344, lng: 131.036};
    // const map = new google.maps.Map(document.getElementById("map"), {
       const zoom = 4;
    //  center: uluru,
-      new google.maps.Map(document.getElementById("map"), {
+      var map = new google.maps.Map(document.getElementById("map"), {
         zoom,
         center,
-        gestureHandling: "cooperative",
+        gestureHandling: 'cooperative',
       });
     }
 
