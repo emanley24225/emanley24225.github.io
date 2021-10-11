@@ -10,12 +10,12 @@
     }
     </style>
     <script>
-            function initMap() {
-      const center = { lat: -25.344, lng: 131.036};
+        function initMap() {
+      const center = { lat: -25.363, lng: 131.044 };
    // const map = new google.maps.Map(document.getElementById("map"), {
       const zoom = 4;
    //  center: uluru,
-      var map = new google.maps.Map(document.getElementById("map"), {
+      new google.maps.Map(document.getElementById("map"), {
         zoom,
         center,
         gestureHandling: 'cooperative',
@@ -33,10 +33,11 @@
     <div id="map"></div>
     <script>
       function initMap() {
-    const myLatlng = {lat: -25.363, lng: 131.044};
+    const myLatlng = {lat: -25.344, lng: 131.036};
     const map = new google.maps.Map(document.getElementById("map"),{
       zoom: 4,
       center: myLatlng,
+      mapId: 'a8b4711577ab4493',
     });
     const marker = new google.maps.Marker({
       position: myLatlng,
