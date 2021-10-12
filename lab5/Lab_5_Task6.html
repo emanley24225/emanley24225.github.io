@@ -10,8 +10,37 @@
       width: 100%;
     }
     </style>
+    <script>
+    var Geocoder;
+    var map;
 
-     <script>
+    function initialize() {
+      Geocoder = new google.maps.Geocoder();
+      var latlng = new google.maps.LatLng(40.7128,74.0060);
+      var mapOptions = {
+        zoom: 2,
+        center: latlng,
+      }
+      map = new google.maps.Map(document.getElementById('map')
+        , mapOptions);
+    }
+    function codeAddress() {
+      var address = document.getElementById('address').value;
+      geocoder.geocode( { 'address': address}, function(
+        results, status) {
+          if (status == 'OK') {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+            });
+          } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+    }
+    </script>
+    <!-- <script>
       function initMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 3,
@@ -34,7 +63,7 @@
       });
       flightPath.setMap(map);
     }
-    </script> 
+    </script> -->
 
   </head>
   <body>
