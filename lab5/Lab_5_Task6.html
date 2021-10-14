@@ -13,7 +13,6 @@
     <script>
     var Geocoder;
     var map;
-
     function initialize() {
       Geocoder = new google.maps.Geocoder();
       var latlng = new google.maps.LatLng(40.7128,74.0060);
@@ -26,7 +25,7 @@
     }
     function codeAddress() {
       var address = document.getElementById('address').value;
-      geocoder.geocode( { 'address': address}, function(
+      Geocoder.geocode( { 'address': address}, function(
         results, status) {
           if (status == 'OK') {
             map.setCenter(results[0].geometry.location);
@@ -66,11 +65,16 @@
     </script> -->
 
   </head>
-  <body>
-    <div id="map"></div>
+  <body onload="initialize()">
+
+    <div id="map" style="width: 1500px; height: 480px;"></div>
+    <div>
+      <input id="address" type="textbox" placeholder="Write Name Of A Place!"/>
+      <input type="button" value="Geocode" onclick="codeAddress()"/>
+    </div>
 
     <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXIhwPbqnBvYZi9VBUNh9QdeJiUyzG2Es&callback=initMap&libraries=&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXIhwPbqnBvYZi9VBUNh9QdeJiUyzG2Es&callback=initialize&libraries=&v=weekly"
     async
     ></script>
 
