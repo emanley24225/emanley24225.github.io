@@ -29,11 +29,11 @@
     ></script>
 
     <div id= "dropdown">
-      
-      <select onchange="handleSelected(this)">
+
+      <select id="selection" onchange="initMap()">
         <option selected> -Polygon or Polyline - </option>
-        <option> Polygon </option>
-        <option> Polyline </option>
+        <option id="Polygon"> Polygon </option>
+        <option id="Polyline"> Polyline </option>
       </select>
     </div>
   </body>
