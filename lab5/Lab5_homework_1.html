@@ -3,38 +3,77 @@
   <head>
     <title> Homework 1</title>
 
-    <style type="text/css">
-    #map {
-      height: 400px;
-      width: 100%;
-    }
-    </style>
-    <script>
-      function initMap() {
-        const miami = { lat: 25.7617, lng: -80.1918 };
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom  : 4,
-          center: miami,
-        });
-      }
-  </script>
-  </head>
+      <script>
+       let shape;
+       let map;
 
-  <body>
-    <div id="map"></div>
+       //Intialize and add the map
+              function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                  zoom: 2,
+                  center: {lat: 0, lng: 0},
+                });
+
+                shape = new google.maps.Polyline({
+                strokeColor: "#000000",
+                strokeOpacity: 1.0,
+                strokeWeight: 3,
+              });
+              shape.setMap(map);
+              map.addListener("click", addLatLng);
+            }
+
+            function addLatLng(event){
+              var x = document.getElementById("Options").value;
+                if (x=="polyline"){
+                  const path = shape.getPath();
+                  path.push(event.latLng);
+                  new google.maps.Marker({
+                    position: event.latlng,
+                    title: "#" + path.getLength(),
+                    map: map,
+                  });}
+              if (x=="polygon") {
+                var closure = false;
+                var shapes = new google.maps.Polyline({map: map, path: [], strokeOpacity: 1.0, strokeWeight: 2 });
+                google.maps.event.addListener(map, 'click', function (clickEvent){
+                    if(closure)
+                      return;
+                  var markerIndex = shapes.getPath().length;
+                  var firstclick = markerIndex === 0;
+                  var marker = new google.maps.Marker({ map: map, position: clickEvent.latLng })
+                  if (firstclick) {
+                  google.maps.event.addListener(marker,'click', function(){
+                    if (closure)
+                       return;
+                 var path = shapes.getPath();
+                 shapes.setMap(null);
+                 shapes = new google.maps.Polygon({ map: map, path: path, strokeOpacity: 0.8, strokeWeight: 2 });
+                 closure = true;
+               });
+              }
+              google.maps.event.addListener(marker, 'drag', function (dragEvent){
+                shapes.getPath().setAt(markerIndex, dragEvent.latLng);
+              });
+              shapes.getPath().push(clickEvent.latLng);
+            });
+            }}
+           </script>
+       </head>
+       <body onload="initMap()">
+         <div>
+
+         <select name="Options" id = "Options">
+         <option value=""> - Polygon or Polyline - </option>
+         <option value="polyline"> Polyline </option>
+         <option value="polygon"> Polygon </option>
+         </select>
+         </div>
+         <div id="map" style="width: 1500px; height: 480px;"></div>
 
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXIhwPbqnBvYZi9VBUNh9QdeJiUyzG2Es&callback=initMap&libraries=&v=weekly"
     async
     ></script>
-
-    <div id= "dropdown">
-
-      <select id="selection" onchange="initMap()">
-        <option selected> -Polygon or Polyline - </option>
-        <option id="Polygon"> Polygon </option>
-        <option id="Polyline"> Polyline </option>
-      </select>
-    </div>
   </body>
 </html>
