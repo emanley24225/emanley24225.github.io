@@ -25,10 +25,9 @@
           , mapOptions);
       }
             function codeAddress() {
-        var address = document.getElementById('address').value;
-        for(var i = 0; i < address.length; i++) {
-        curraddress = address[i];
-        Geocoder.geocode( { 'address': curraddress}, function(
+          var address = document.getElementById('address').value;
+          for (i = 0; i < address.length; i++) {
+          Geocoder.geocode( { 'address': address}, function(
             results, status) {
               if (status == 'OK') {
                 map.setCenter(results[0].geometry.location);
