@@ -24,15 +24,14 @@
         map = new google.maps.Map(document.getElementById('map')
           , mapOptions);
       }
-      function codeAddress() {
-        var locations = []
+            function codeAddress() {
         var address = document.getElementById('address').value;
         for(var i = 0; i < address.length; i++) {
         curraddress = address[i];
-        Geocoder.geocode( { 'address': address[i]}, function(
+        Geocoder.geocode( { 'address': curraddress}, function(
             results, status) {
               if (status == 'OK') {
-                locations.push(results[0].geometry.location);
+                map.setCenter(results[0].geometry.location);
                 var marker = new google.maps.Marker({
                   map: map,
                   position: results[0].geometry.location
@@ -42,27 +41,13 @@
               }
             });
         }}
-        function createMarker(results) {
-      var marker = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
-          map: map,
-          position: results[0].geometry.location,
-          title: title,
-          animation: google.maps.Animation.DROP,
-          address: address,
-          url: url
-      })
-      bounds.extend(marker.getPosition());
-      map.fitBounds(bounds);
-      return marker;
-  }
-
     </script>
+
     </head>
 
     <body onload="initialize()">
 
-      <div id="map" style="width: 1500px; height: 480px;"></div>
+      <div id="map" style="width: 100%; height: 480px;"></div>
       <div>
         <input id="address" type="textbox" placeholder="Write Name Of A Place!"/>
         <input type="button" value="Geocode" onclick="codeAddress()"/>
