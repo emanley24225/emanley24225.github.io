@@ -37,10 +37,10 @@
                   map: map,
                   icon: image4,
                  });
-               const MachuPichu = { lat: -13.1631, lng: -72.5450 };
+               const MachuPicchu = { lat: -13.1631, lng: -72.5450 };
                const image5 = "https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/15/000000/external-machu-picchu-wonder-of-the-world-vitaliy-gorbachev-fill-vitaly-gorbachev.png";
                const markerMac = new google.maps.Marker({
-                   position: MachuPichu,
+                   position: MachuPicchu,
                    map: map,
                    icon: image5,
                   });
@@ -75,7 +75,7 @@ const contentTaj =
 "(reigned from 1628 to 1658) to housethe tomb of his favourite wife," +
 "Mumtaz Mahal; it also houses the tomb of Shah Jahan himself.</p>" +
 '<p>Attribution: TajMahal, <a href="https://en.wikipedia.org/wiki/Taj_Mahal">' +
-'<img src="https://en.wikipedia.org/wiki/Taj_Mahal#/media/File:Taj_Mahal_in_India_-_Kristian_Bertel.jpg">'+
+'<img src="https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg">'+
 "</p>" +
 "</div>" +
 "</div>";
@@ -90,9 +90,9 @@ const contentGreat =
 "It was finished in 1878 and it was meant to protect the north of the empire"+
 "of China from enemy attacks. It is the longest structure humans have ever built."+
 "It is about 21,196 kilometers long, 9.1 meters (30 feet) wide and 15 meters high.</p>" +
-'<p>Attribution: GreatWall, <a href="https://en.wikipedia.org/wiki/Great_Wall_of_China">' +
-"</a> " +
-'<img src="https://en.wikipedia.org/wiki/Great_Wall_of_China#/media/File:The_Great_Wall_of_China_at_Jinshanling-edit.jpg">'+
+'<p>Attribution: Great Wall, <a href="https://en.wikipedia.org/wiki/Great_Wall_of_China">' +
+"https://en.wikipedia.org/wiki/Great_Wall_of_China </a> " +
+'<img src="https://media.nationalgeographic.org/assets/photos/310/436/e98bf54c-f84b-4a8c-81a6-ae66279cd62d.jpg">'+
 "</p>" +
 "</div>" +
 "</div>";
@@ -111,7 +111,8 @@ const contentPet =
 "and the Nabataeans might have settled in what would become the capital" +
 "city of their kingdom, as early as the 4th century BC."
 '<p>Attribution: Petra, <a href="https://en.wikipedia.org/wiki/Petra">' +
-'<img src="https://en.wikipedia.org/wiki/Petra#/media/File:View_of_Petra.jpg">'+
+"https://en.wikipedia.org/wiki/Petra </a> " +
+'<img src="https://img.theculturetrip.com/1440x807/smart/wp-content/uploads/2020/11/tahw71-1.jpg">'+
 "</p>" +
 "</div>" +
 "</div>";
@@ -125,7 +126,8 @@ const contentChr = '<div id="content">' +
 "in Rio de Janeiro. Constructed between 1922 and 1931, the statue is" +
 "30 metres (98 ft) high, excluding its 8-metre (26 ft) pedestal." +
 "The arms stretch 28 metres (92 ft) wide."
-'<p>Attribution: Christ, <a href="https://en.wikipedia.org/wiki/Machu_Picchu">' +
+'<p>Attribution: Christ, <a href="https://en.wikipedia.org/wiki/Machu_Picchu">'+
+"https://en.wikipedia.org/wiki/Machu_Picchu </a> " +
 '<img src="https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)#/media/File:Aerial_view_of_the_Statue_of_Christ_the_Redeemer.jpg">'+
 "</p>" +
 "</div>" +
@@ -141,7 +143,8 @@ const contentMac = '<div id="content">' +
 "mountain ridge. It is located in the Machupicchu District within" +
 "Urubamba Province above the Sacred Valley, which is 80 kilometers (50 mi)" +
 "northwest of Cuzco."
-'<p>Attribution: Machu Pichu, <a href="https://en.wikipedia.org/wiki/Machu_Picchu">' +
+'<p>Attribution: Machu Picchu, <a href="https://en.wikipedia.org/wiki/Machu_Picchu">' +
+"https://en.wikipedia.org/wiki/Machu_Picchu </a> "+
 '<img src="https://en.wikipedia.org/wiki/Machu_Picchu#/media/File:Machu_Picchu,_Peru.jpg">'+
 "</p>" +
 "</div>" +
@@ -157,6 +160,7 @@ const contentChic = '<div id="content">' +
 "The archeological site is located in Tinúm Municipality," +
 "Yucatán State, Mexico."
 '<p>Attribution: Machu Pichu, <a href="https://en.wikipedia.org/wiki/Chichen_Itza">' +
+  "https://en.wikipedia.org/wiki/Chichen_Itza </a> " +
 '<img src="https://en.wikipedia.org/wiki/Chichen_Itza#/media/File:Chichen_Itza_3.jpg">'+
 "</p>" +
 "</div>" +
@@ -172,6 +176,7 @@ const contentCol = '<div id="content">' +
 "largest ancient amphitheatre ever built, and is still the largest" +
 "standing amphitheatre in the world today, despite its age."
 '<p>Attribution: Colosseum, <a href="https://en.wikipedia.org/wiki/Colosseum">' +
+  "https://en.wikipedia.org/wiki/Colosseum</a> " +
 '<img src="https://en.wikipedia.org/wiki/Colosseum#/media/File:Colosseo_2020.jpg">'+
 "</p>" +
 "</div>" +
@@ -209,7 +214,7 @@ markerCol.setMap(map);
 
 markerTaj.addListener("click", () => {
 infowindow1.open({
-  anchor: markerTM,
+  anchor: markerTaj,
   map: map,
   shouldFocus: false,
 });
@@ -217,7 +222,7 @@ infowindow1.open({
 
 markerGreat.addListener("click", () => {
 infowindow2.open({
-  anchor: markerGW,
+  anchor: markerGreat,
   map: map,
   shouldFocus: false,
 });
@@ -225,7 +230,7 @@ infowindow2.open({
 
 
 markerPet.addListener("click", () => {
-infowindow2.open({
+infowindow3.open({
   anchor: markerPet,
   map: map,
   shouldFocus: false,
@@ -234,7 +239,7 @@ infowindow2.open({
 
 
 markerChr.addListener("click", () => {
-infowindow2.open({
+infowindow4.open({
   anchor: markerChr,
   map: map,
   shouldFocus: false,
@@ -243,7 +248,7 @@ infowindow2.open({
 
 
 markerMac.addListener("click", () => {
-infowindow2.open({
+infowindow5.open({
   anchor: markerMac,
   map: map,
   shouldFocus: false,
@@ -252,7 +257,7 @@ infowindow2.open({
 
 
 markerChic.addListener("click", () => {
-infowindow2.open({
+infowindow6.open({
   anchor: markerChic,
   map: map,
   shouldFocus: false,
@@ -261,7 +266,7 @@ infowindow2.open({
 
 
 markerCol.addListener("click", () => {
-infowindow2.open({
+infowindow7.open({
   anchor: markerCol,
   map: map,
   shouldFocus: false,
