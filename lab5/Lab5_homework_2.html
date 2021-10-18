@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+      <title> Homework 2 </title>
+      <style type="text/css">
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+      </style>
+
+      <script>
+
+      var Geocoder;
+      var map;
+      function initialize() {
+        Geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(40.7128,74.0060);
+        var mapOptions = {
+          zoom: 2,
+          center: latlng,
+        }
+        map = new google.maps.Map(document.getElementById('map')
+          , mapOptions);
+      }
+      function codeAddress() {
+        var coords = []
+        var address = document.getElementById('address').value;
+        for(var i = 0; i < address.length; i++) {
+        curraddress = address[i];
+        Geocoder.geocode( { 'address': address[i]}, function(
+            results, status) {
+              if (status == 'OK') {
+                coords.push(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location
+                });
+              } else {
+          alert("Not able to locate the item searched");
+              }
+            });
+        }}
+        function createMarker(results) {
+      var marker = new google.maps.Marker({
+          icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+          map: map,
+          position: results[0].geometry.location,
+          title: title,
+          animation: google.maps.Animation.DROP,
+          address: address,
+          url: url
+      })
+      bounds.extend(marker.getPosition());
+      map.fitBounds(bounds);
+      return marker;
+  }
+
+    </script>
+    </head>
+
+    <body onload="initialize()">
+
+      <div id="map" style="width: 1500px; height: 480px;"></div>
+      <div>
+        <input id="address" type="textbox" placeholder="Write Name Of A Place!"/>
+        <input type="button" value="Geocode" onclick="codeAddress()"/>
+      </div>
+
+      <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXIhwPbqnBvYZi9VBUNh9QdeJiUyzG2Es&callback=initialize&libraries=&v=weekly"
+      async
+      ></script>
+
+    </body>
+</html>
