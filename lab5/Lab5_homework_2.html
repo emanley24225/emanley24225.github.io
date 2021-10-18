@@ -25,14 +25,14 @@
           , mapOptions);
       }
       function codeAddress() {
-        var coords = []
+        var locations = []
         var address = document.getElementById('address').value;
         for(var i = 0; i < address.length; i++) {
         curraddress = address[i];
         Geocoder.geocode( { 'address': address[i]}, function(
             results, status) {
               if (status == 'OK') {
-                coords.push(results[0].geometry.location);
+                locations.push(results[0].geometry.location);
                 var marker = new google.maps.Marker({
                   map: map,
                   position: results[0].geometry.location
