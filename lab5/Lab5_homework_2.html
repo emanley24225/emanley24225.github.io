@@ -24,10 +24,12 @@
         map = new google.maps.Map(document.getElementById('map')
           , mapOptions);
       }
+        var smith = ["Smith Street"]
             function codeAddress() {
           var address = document.getElementById('address').value;
           for (i = 0; i < address.length; i++) {
-          Geocoder.geocode( { 'address': address}, function(
+            function(i){
+            Geocoder.geocode( { 'address': address[i] }, function(
             results, status) {
               if (status == 'OK') {
                 map.setCenter(results[0].geometry.location);
@@ -39,7 +41,7 @@
           alert("Not able to locate the item searched");
               }
             });
-        }}
+        }}}
     </script>
 
     </head>
