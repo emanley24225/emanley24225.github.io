@@ -24,24 +24,22 @@
         map = new google.maps.Map(document.getElementById('map')
           , mapOptions);
       }
-        var smith = ["Smith Street"]
-            function codeAddress() {
+        function codeAddress() {
           var address = document.getElementById('address').value;
-          for (i = 0; i < address.length; i++) {
-            function(i){
-            Geocoder.geocode( { 'address': address[i] }, function(
+            Geocoder.geocode( { 'address': address }, function(
             results, status) {
               if (status == 'OK') {
+                for (i = 0; i < results.length; i++) {
                 map.setCenter(results[0].geometry.location);
                 var marker = new google.maps.Marker({
                   map: map,
                   position: results[0].geometry.location
                 });
-              } else {
+              }} else {
           alert("Not able to locate the item searched");
               }
             });
-        }}}
+        }
     </script>
 
     </head>
