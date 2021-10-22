@@ -4,10 +4,33 @@
   <title>Ethan Manley</title>
   <!-- All styling for this HTML document are contained in an external css
   file -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <script src="javascript/secret_keys.js"></script>
   <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
   <script src="javascript/external.js"></script>
     </head>
+
 <body>
+  <h3> My First Webmap </h3>
+  <div id="map-id" style="width: 600px; height:400px; margin: auto;">
+    <script>
+    var mymap = L.map('map-id').setView([51.505, -0.09], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}/?access_token={'pk.eyJ1IjoiZW1hbmxleTI0MjI1IiwiYSI6ImNrb2o0dGVsMDAxMmsybm83N2lmdDV4YW4ifQ.uCASpCKvoet0SFZN8qHRJg'}', {
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      accessToken: mapbox_access_token,
+    }).addTo(mymap);
+    </script>
+  </div>
+
+
   <div id ="body-container">
     <div id="header">
       <h1 id = "java">
