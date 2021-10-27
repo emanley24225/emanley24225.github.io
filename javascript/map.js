@@ -13,8 +13,11 @@
   */
   L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
   }).addTo(mymap);
-
-     var marker1 = L.marker([27.17, 78.04]).addTo(mymap);{}
+     var icon1 = L.icon({
+       iconUrl: 'taj.png',
+       iconSize: [20,20]
+     });
+     var marker1 = L.marker([27.17, 78.04], {icon: icon1}).addTo(mymap);{}
      marker1.bindPopup("<b>Taj Mahal</b><br> <p> The Taj Mahal is an ivory-white marble mausoleum.</p> <img src='https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg'/>").openPopup();
      marker1.on("click", function(e) {
      mymap.setView(e.latlng, 14);
