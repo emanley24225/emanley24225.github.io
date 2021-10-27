@@ -14,7 +14,11 @@
   L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
   }).addTo(mymap);
 
-//     var marker = L.marker([51.5, -0.09]).addTo(mymap);
+     var marker1 = L.marker([27.17, 78.04]).addTo(mymap);{}
+     marker1.bindPopup("<b>Taj Mahal</b><br> <p> The Taj Mahal is an ivory-white marble mausoleum.</p> <img src='https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg'/>").openPopup();
+     marker1.on("click", function(e) {
+     mymap.setView(e.latlng, 14);
+    });
 //
 //     var circle = L.circle([51.508, -0.11], 500, {
 //     color: 'red',
@@ -34,12 +38,12 @@
 //   [51.507, -0.047]
 // ]).addTo(mymap);
 //
-//   marker.bindPopup("<b>Hello World!</b><br>I am a popup.").openPopup();
+//   marker1.bindPopup("<b>Hello World!</b><br>I am a popup.").openPopup();
 //   circle.bindPopup("I am a circle.");
 //   polygon.bindPopup("I am a polygon.")
 //
-//   marker.on("click", function(e) {
-//     mymap.setView(e.latlng, 14);
+//    marker1.on("click", function(e) {
+//    mymap.setView(e.latlng, 14);
 //   });
 //   circle.on("click", function(e) {
 //     mymap.setView(e.latlng, 13);
