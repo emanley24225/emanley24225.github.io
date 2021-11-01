@@ -2,7 +2,7 @@
     fullscreenControl: true,
     fullscreenControlOptions: {
    position: 'topleft'
- }
+   }
 });
 
   var options = {
@@ -31,7 +31,7 @@
      marker1.on("click", function(e) {
      mymap.setView(e.latlng, 14);
      marker1.bounce({duration: 500, height: 100}, function(){console.log("done")});
-    });
+     });
 
     var icon2 = L.icon({
       iconUrl: 'https://png.pngtree.com/png-clipart/20190917/original/pngtree-hand-drawn-yellow-great-wall-illustration-png-image_4601290.jpg',
@@ -100,6 +100,22 @@
    });
 
    L.control.mousePosition().addTo(mymap);
+
+   L.graticule().addTo(mymap);
+
+   // Specify divisions every 10 degrees
+   L.graticule({ interval: 50 }).addTo(mymap);
+
+   // Specify bold red lines instead of thin grey lines
+   L.graticule({
+       style: {
+           color: 'black',
+           weight: 1
+       }
+   }).addTo(mymap);
+
+     // And to remove it do:
+   //areaSelect.remove();
 //     var circle = L.circle([51.508, -0.11], 500, {
 //     color: 'red',
 //     fillColor: '#f03',
