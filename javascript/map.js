@@ -30,6 +30,7 @@
      marker1.bindPopup("<b>Taj Mahal</b><br> <p> The Taj Mahal is an ivory-white marble mausoleum.</p> <img src='https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg'/>").openPopup();
      marker1.on("click", function(e) {
      mymap.setView(e.latlng, 14);
+     marker1.bounce({duration: 500, height: 100}, function(){console.log("done")});
     });
 
     var icon2 = L.icon({
@@ -40,6 +41,7 @@
     marker2.bindPopup("<b>Great Wall</b><br> <p>The Great Wall of China is an ancient structure in China. It was finished in 1878 and it was meant to protect the north of the empire.</p> <img src='https://media.nationalgeographic.org/assets/photos/310/436/e98bf54c-f84b-4a8c-81a6-ae66279cd62d.jpg'/>").openPopup();
     marker2.on("click", function(e) {
     mymap.setView(e.latlng, 14);
+    marker2.bounce({duration: 500, height: 100}, function(){console.log("done")});
    });
 
    var icon3 = L.icon({
@@ -50,6 +52,7 @@
    marker3.bindPopup("<b>Petra</b><br> <p>Petra is a historic and archaeological city in southern Jordan. It is adjacent to the mountain of Jabal Al-Madbah.</p> <img src='https://img.theculturetrip.com/1440x807/smart/wp-content/uploads/2020/11/tahw71-1.jpg'/>").openPopup();
    marker3.on("click", function(e) {
    mymap.setView(e.latlng, 14);
+   marker3.bounce({duration: 500, height: 100}, function(){console.log("done")});
    });
 
    var icon4 = L.icon({
@@ -60,6 +63,7 @@
    marker4.bindPopup("<b>Christ The Redeemer</b><br> <p>Christ the Redeemer is an Art Deco statue of Jesus Christ in Rio de Janeiro. Constructed between 1922 and 1931. </p> <img src='https://cdn.britannica.com/s:690x388,c:crop/54/150754-050-5B93A950/statue-Christ-the-Redeemer-Rio-de-Janeiro.jpg'/>").openPopup();
    marker4.on("click", function(e) {
    mymap.setView(e.latlng, 14);
+   marker4.bounce({duration: 500, height: 100}, function(){console.log("done")});
    });
 
    var icon5 = L.icon({
@@ -70,6 +74,7 @@
    marker5.bindPopup("<b>Machu Picchu</b><br> <p>Machu Picchu is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru on a 2,430-meter mountain ridge. </p> <img src='https://i.guim.co.uk/img/media/b56952349419f749667d43f38b4d05e2980821a2/0_176_6016_3611/master/6016.jpg?width=700&quality=45&auto=format&fit=max&dpr=2&s=16ba79d77ef6eaf0c31c4de8d27ada36'/>").openPopup();
    marker5.on("click", function(e) {
    mymap.setView(e.latlng, 14);
+   marker5.bounce({duration: 500, height: 100}, function(){console.log("done")});
    });
 
    var icon6 = L.icon({
@@ -80,6 +85,7 @@
    marker6.bindPopup("<b>Chichen Itza</b><br> <p>Chichen Itza was a large pre-Columbian city built by the Maya people of the Terminal Classic period. </p> <img src='https://cdn.britannica.com/s:800x450,c:crop/86/179586-138-8B763D72/Overview-Chichen-Itza-Yucatan-Mexico.jpg'/>").openPopup();
    marker6.on("click", function(e) {
    mymap.setView(e.latlng, 14);
+   marker6.bounce({duration: 500, height: 100}, function(){console.log("done")});
    });
 
    var icon7 = L.icon({
@@ -90,6 +96,7 @@
    marker7.bindPopup("<b>Colosseum</b><br> <p>The Colosseum is an oval amphitheatre in the content of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built. </p> <img src='https://media.cntraveler.com/photos/59d3a805ddaded4e04772233/16:9/w_2560%2Cc_limit/Rome_GettyImages-841851056.jpg'/>").openPopup();
    marker7.on("click", function(e) {
    mymap.setView(e.latlng, 14);
+   marker7.bounce({duration: 500, height: 100}, function(){console.log("done")});
    });
 
 
