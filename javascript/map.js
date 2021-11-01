@@ -99,7 +99,7 @@
    marker7.bounce({duration: 500, height: 100}, function(){console.log("done")});
    });
 
-
+   L.control.mousePosition().addTo(mymap);
 //     var circle = L.circle([51.508, -0.11], 500, {
 //     color: 'red',
 //     fillColor: '#f03',
