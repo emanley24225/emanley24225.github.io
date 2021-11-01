@@ -6,7 +6,7 @@
 });
 
   var options = {
-    key: '0277ec1e1fe54620a7d1fe02e70d04fb',
+    key: geocoder_api_key,
     limit: 10
   };
   var control = L.Control.openCageSearch(options).addTo(mymap);
