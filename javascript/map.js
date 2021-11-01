@@ -10,15 +10,13 @@
     limit: 10
   };
   var control = L.Control.openCageSearch(options).addTo(mymap);
-  /* Mapbox Tileset
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    maxZoom: 18,
-    id: 'mapbox.mapbox-traffic-v1',
-    accessToken: mapbox_access_token,
-  }).addTo(mymap);
-  */
+   //Mapbox Tileset
+  // L.tileLayer('https://api.tiles.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+  //   maxZoom: 18,
+  //   id: 'mapbox/satellite-streets-v11',
+  //   accessToken: mapbox_access_token,
+  // }).addTo(mymap);
 
-//
   L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
   }).addTo(mymap);
 
@@ -114,8 +112,7 @@
        }
    }).addTo(mymap);
 
-     // And to remove it do:
-   //areaSelect.remove();
+
 //     var circle = L.circle([51.508, -0.11], 500, {
 //     color: 'red',
 //     fillColor: '#f03',
