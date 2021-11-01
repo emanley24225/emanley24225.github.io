@@ -1,4 +1,10 @@
-  var mymap = L.map('map-id');
+  var mymap = L.map('map-id', {
+    fullscreenControl: true,
+    fullscreenControlOptions: {
+   position: 'topleft'
+ }
+});
+
   var options = {
     key: geocoder_api_key,
     limit: 10
