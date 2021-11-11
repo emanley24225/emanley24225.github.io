@@ -1,108 +1,14 @@
 <html>
-<html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="initial-scale=1,maximum-scale=1,user-scalable=no"
-    />
-    <title>
-      Intro to MapView - Create a 2D map | Sample | ArcGIS API for JavaScript
-      4.21
-    </title>
-    <style>
-      html,
-      body,
-      #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
-    </style>
+      content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>LayerList widget | Sample | ArcGIS API for JavaScript 4.21</title>
 
     <link
       rel="stylesheet"
-      href="https://js.arcgis.com/4.21/esri/themes/light/main.css"
-    />
-    <script src="https://js.arcgis.com/4.21/"></script>
-
-    <script>
-      require(["esri/Map", "esri/views/MapView", "esri/layers/GeoJSONLayer","esri/widgets/LayerList"],
-      (Map, MapView, GeoJSONLayer, LayerList) => {
-        const url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
-
-        const template = {
-      title: "Earthquake Info",
-      content: "Magnitude {mag} {type} hit {place} on {time}",
-      fieldInfos: [
-        {
-          fieldName: 'time',
-          format: {
-            dateFormat: 'short-date-short-time'
-          }
-        }
-      ]
-    };
-
-    const renderer = {
-      type: "simple",
-      field: "mag",
-      symbol: {
-        type: "simple-marker",
-        color: "orange",
-        outline: {
-          color: "white"
-        }
-      },
-      visualVariables: [{
-        type: "size",
-        field: "mag",
-        stops: [{
-            value: 2.5,
-            size: "4px"
-          },
-          {
-            value: 8,
-            size: "40px"
-          }
-        ]
-      }]
-    };
-
-    const geojsonLayer = new GeoJSONLayer({
-      url: url,
-      copyright: "USGS Earthquakes",
-      popupTemplate: template,
-      renderer: renderer //optional
-    });
-
-        const map = new Map({
-          basemap: "topo-vector"
-        });
-
-        const view = new MapView({
-          container: "viewDiv",
-          map: map,
-          zoom: 4,
-          center: [15, 65] // longitude, latitude
-        });
-        view.when(() => {
-          const layerList = new LayerList({
-            view: view,
-      });
-      view.ui.add(layerList, "bottom-left");
-    });
-  });
-    </script>
-  </head>
-
-  <!-- <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-    <title>LayerList widget | Sample | ArcGIS API for JavaScript 4.21</title>
-
-    <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css" />
+      href="https://js.arcgis.com/4.21/esri/themes/dark/main.css"/>
 
     <style>
       html,
@@ -118,42 +24,47 @@
 
     <script src="https://js.arcgis.com/4.21/"></script>
 
-
     <script>
-      require(["esri/views/SceneView", "esri/widgets/LayerList", "esri/WebScene"],
-     (
-       SceneView,
-       LayerList,
-       WebScene
-     ) => {
-       const scene = new WebScene({
-         portalItem: {
-           // autocasts as new PortalItem()
-           id: "adfad6ee6c6043238ea64e121bb6429a"
-         }
-       });
+      require([ //enables the proper esri settings so the map can be rendered as well as the layer list.
+        "esri/views/SceneView",
+        "esri/widgets/LayerList",
+        "esri/WebScene"
+      ], (SceneView, LayerList, WebScene) => {
+        const scene = new WebScene({ //creates a variable where the web map can be input into.
+          portalItem: {
+            // autocasts as new PortalItem()
+            id: "adfad6ee6c6043238ea64e121bb6429a"
+          }
+        });
 
-       const view = new SceneView({
-         container: "viewDiv",
-         map: scene
-       });
+        const view = new SceneView({ //creates a map where the web information can be shown.
+          container: "viewDiv", // divider within web page where map will be displayed.
+          map: scene //calls the elements to be shown in the map.
+        });
 
-       view.when(() => {
-         const layerList = new LayerList({
-           view: view,
+        view.when(() => { //creates the layerlist which is shown when the SceneView is rendered.
+          const layerList = new LayerList({
+            view: view
+            });
+            layerList.selectionEnabled = true; // Indicates whether list items may be selected by the user.
+          // Add widget to the top right corner of the view
+          view.ui.add(layerList, "bottom-left"); // places the layerlist in the bottom left corner rather than top right.
+        });
+      });
+  //Challenges/Confusion
+// I generally struggled with the idea of altering the wiget. It felt like the
+//code was so small I was unsure whether to try to alter it or add to it
+// in an effort to change components.
+// I tried to import a new GeoJSON but I could not get it to shown within
+// the layer list. So I focused on altering smaller portions of the code
+// like the color and the selection process of layers within the list.
 
-          });
+    </script>
+  </head>
 
-         // Add widget to the top right corner of the view
-         view.ui.add(layerList, "bottom-left");
-       });
-     });
+  <body class="calcite">
+    <div id="viewDiv"></div>
+  </body>
+</html>
 
-
-   </script>
- </head> -->
-
- <body>
-   <div id="viewDiv"></div>
- </body>
 </html>
