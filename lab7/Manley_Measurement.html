@@ -71,14 +71,14 @@
         // World Ocean Base Basemap
         const tileLayer = new TileLayer({
           url:
-            "https://services.arcgisonline.com/arcgis/rest/services/Ocean/World_Ocean_Base/MapServer"
+            "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade_Dark/MapServer" // changed to elevation!
         });
 
-        // Capital cities in Europe FeatureLayer
+        // CO2 emissions in Europe FeatureLayer
+
         const featureLayer = new FeatureLayer({
-          url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/europe_country_capitals/FeatureServer/0"
+          url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/Annual_CO2_emissions/FeatureServer"
         });
-
         // Create new Map with TileLayer and FeatureLayer
         const map = new Map({
           layers: [tileLayer, featureLayer]
@@ -108,7 +108,7 @@
         const legend = new Legend({
           layerInfos: [{
             layer: featureLayer,
-            title: "European Capital Cities"
+            title: "CO2 Emissions" //changed legend
           }]
         });
 
