@@ -68,13 +68,13 @@
         Legend
       ) => {
 
-        // World Ocean Base Basemap
+        // Dark Hillshade map. Changed this.
         const tileLayer = new TileLayer({
           url:
             "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade_Dark/MapServer" // changed to elevation!
         });
 
-        // CO2 emissions in Europe FeatureLayer
+        // CO2 emissions in Europe FeatureLayer. changed this.
 
         const featureLayer = new FeatureLayer({
           url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/Annual_CO2_emissions/FeatureServer"
